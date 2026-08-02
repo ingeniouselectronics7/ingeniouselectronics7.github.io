@@ -2,9 +2,237 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi Primera Página Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardapolvos UTEC - Ingenious Electronics</title>
+    <style>
+        /* Estilos Generales con la paleta de colores UTEC */
+        :root {
+            --azul-utec: #002d62;
+            --celeste-utec: #00aae4;
+            --gris-fondo: #f4f7f9;
+            --texto-oscuro: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--gris-fondo);
+            color: var(--texto-oscuro);
+            line-height: 1.6;
+        }
+
+        /* Encabezado / Navbar */
+        header {
+            background-color: var(--azul-utec);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--celeste-utec);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: var(--celeste-utec);
+            font-weight: bold;
+        }
+
+        /* Sección Principal / Hero */
+        .hero {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            background-color: #fcfcfc;
+            padding: 40px;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        /* Marcador de posición para simular el producto */
+        .placeholder-apron {
+            font-size: 5rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .logo-badge {
+            background-color: var(--azul-utec);
+            color: white;
+            padding: 5px 15px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            display: inline-block;
+            border: 1px solid var(--celeste-utec);
+        }
+
+        .hero-details {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-details h2 {
+            font-size: 1.8rem;
+            color: var(--azul-utec);
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: #27ae60;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features li::before {
+            content: "✓";
+            color: var(--celeste-utec);
+            font-weight: bold;
+        }
+
+        /* Botón de Pedido por WhatsApp */
+        .btn-order {
+            display: inline-block;
+            background-color: #25d366;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            text-align: center;
+            width: 100%;
+        }
+
+        .btn-order:hover {
+            background-color: #128c7e;
+        }
+
+        /* Información Adicional */
+        .info-section {
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .info-card h3 {
+            color: var(--azul-utec);
+            margin-bottom: 10px;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: var(--azul-utec);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>¡Hola Mundo! Mi sitio ya está en vivo en GitHub Pages.</h1>
+
+    <header>
+        <h1>Ingenious Electronics Store</h1>
+        <p>Indumentaria Oficial para Laboratorios UTEC</p>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-image">
+                <!-- Icono representativo de guardapolvo médico/laboratorio -->
+                <span class="placeholder-apron">🥼</span>
+                <div class="logo-badge">LOGO UTEC ESTAMPADO</div>
+                <p style="margin-top: 15px; font-size: 0.85rem; color: #666;">(Imagen del guardapolvo de alta calidad)</p>
+            </div>
+            
+            <div class="hero-details">
+                <h2>Guardapolvo Premium UTEC</h2>
+                <p style="color: #666; margin-bottom: 15px;">Diseñado especialmente para estudiantes de ingeniería, bioingeniería y ciencias de la Universidad de Ingeniería y Tecnología.</p>
+                
+                <div class="price">S/. 45.00</div>
+                
+                <ul class="features">
+                    <li>Material: 100% Algodón Dril (resistente y fresco).</li>
+                    <li>Estampado de alta durabilidad del logo UTEC en el pecho.</li>
+                    <li>Mangas con puño elástico para mayor seguridad en laboratorio.</li>
+                    <li>Disponibilidad de tallas: S, M, L y XL.</li>
+                </ul>
+
+                <!-- Enlace directo a WhatsApp para gestionar la venta de forma fácil -->
+                <a href="https://wa.me" class="btn-order" target="_blank">
+                    Solicitar Pedido por WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="info-card">
+                <h3>Tallas Disponibles</h3>
+                <p>Contamos con stock variado para asegurar tu comodidad durante las extensas horas de laboratorio.</p>
+            </div>
+            <div class="info-card">
+                <h3>Entrega en Campus</h3>
+                <p>Coordinamos entregas directas en los exteriores o cercanías del campus UTEC en Barranco.</p>
+            </div>
+            <div class="info-card">
+                <h3>Calidad Garantizada</h3>
+                <p>Tela resistente a químicos ligeros y lavados continuos sin perder consistencia ni color.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Ingenious Electronics. Desarrollado y alojado mediante GitHub Pages.</p>
+    </footer>
+
 </body>
 </html>
