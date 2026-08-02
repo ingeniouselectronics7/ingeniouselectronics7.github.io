@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guardapolvos UTEC - Ingenious Electronics</title>
+    <title>Home | Tienda virtual UTEC Store</title>
     <style>
-        /* Estilos Generales con la paleta de colores UTEC */
+        /* Variables globales con la paleta tipográfica y cromática oficial UTEC Store */
         :root {
             --azul-utec: #002d62;
             --celeste-utec: #00aae4;
-            --gris-fondo: #f4f7f9;
-            --texto-oscuro: #333333;
+            --texto-principal: #333333;
+            --texto-secundario: #666666;
+            --gris-barra: #f1f3f5;
+            --gris-fondo-card: #f8f9fa;
+            --borde-gris: #e9ecef;
         }
 
         * {
@@ -21,218 +24,347 @@
         }
 
         body {
-            background-color: var(--gris-fondo);
-            color: var(--texto-oscuro);
-            line-height: 1.6;
+            background-color: #ffffff;
+            color: var(--texto-principal);
+            overflow-x: hidden;
         }
 
-        /* Encabezado / Navbar */
-        header {
-            background-color: var(--azul-utec);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 4px solid var(--celeste-utec);
-        }
-
-        header h1 {
-            font-size: 2rem;
-            margin-bottom: 5px;
-        }
-
-        header p {
-            font-size: 1rem;
-            color: var(--celeste-utec);
-            font-weight: bold;
-        }
-
-        /* Sección Principal / Hero */
-        .hero {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        /* 1. Barra de Utilidades Superior */
+        .top-bar {
+            background-color: var(--gris-barra);
+            border-bottom: 1px solid var(--borde-gris);
+            padding: 10px 8%;
             display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
+            justify-content: space-between;
             align-items: center;
+            font-size: 0.85rem;
+            color: var(--texto-secundario);
         }
 
-        .hero-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-            background-color: #fcfcfc;
-            padding: 40px;
-            border: 2px dashed #ddd;
-            border-radius: 8px;
+        .top-bar .contact-info span {
+            margin-right: 15px;
+        }
+
+        .top-bar .auth-links a {
+            color: var(--texto-principal);
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: 500;
+        }
+
+        .top-bar .auth-links a:hover {
+            color: var(--celeste-utec);
+        }
+
+        /* 2. Cabecera Principal / Navegación */
+        header {
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            border-bottom: 1px solid var(--borde-gris);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--azul-utec);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--celeste-utec);
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--texto-principal);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--celeste-utec);
+        }
+
+        .cart-icon-container {
+            font-size: 1.2rem;
+            cursor: pointer;
             position: relative;
         }
 
-        /* Marcador de posición para simular el producto */
-        .placeholder-apron {
-            font-size: 5rem;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .logo-badge {
-            background-color: var(--azul-utec);
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            background-color: var(--celeste-utec);
             color: white;
-            padding: 5px 15px;
+            font-size: 0.7rem;
             font-weight: bold;
-            font-size: 0.8rem;
-            border-radius: 4px;
-            display: inline-block;
-            border: 1px solid var(--celeste-utec);
+            padding: 2px 6px;
+            border-radius: 50%;
         }
 
-        .hero-details {
-            flex: 1;
-            min-width: 300px;
+        /* 3. Sección Banner de Bienvenida */
+        .hero-banner {
+            background: linear-gradient(135deg, var(--azul-utec) 0%, #001834 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
         }
 
-        .hero-details h2 {
+        .hero-banner h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero-banner p {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* 4. Sección de Galería de Productos */
+        .catalog-container {
+            padding: 60px 8%;
+        }
+
+        .section-title {
             font-size: 1.8rem;
             color: var(--azul-utec);
-            margin-bottom: 15px;
+            margin-bottom: 5px;
+            font-weight: 700;
         }
 
-        .price {
-            font-size: 2rem;
-            color: #27ae60;
-            font-weight: bold;
-            margin-bottom: 15px;
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--texto-secundario);
+            margin-bottom: 40px;
         }
 
-        .features {
-            list-style: none;
-            margin-bottom: 25px;
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 30px;
         }
 
-        .features li {
-            margin-bottom: 8px;
+        .product-card {
+            background: #ffffff;
+            border: 1px solid var(--borde-gris);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .image-wrapper {
+            background-color: var(--gris-fondo-card);
+            border-radius: 6px;
+            height: 220px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            font-size: 4rem;
+            margin-bottom: 15px;
+            position: relative;
         }
 
-        .features li::before {
-            content: "✓";
-            color: var(--celeste-utec);
-            font-weight: bold;
-        }
-
-        /* Botón de Pedido por WhatsApp */
-        .btn-order {
-            display: inline-block;
-            background-color: #25d366;
+        .badge-special {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #e67e22;
             color: white;
-            text-decoration: none;
-            padding: 15px 30px;
-            font-size: 1.1rem;
+            font-size: 0.75rem;
             font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-            text-align: center;
-            width: 100%;
+            padding: 4px 8px;
+            border-radius: 4px;
         }
 
-        .btn-order:hover {
-            background-color: #128c7e;
+        .product-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--texto-secundario);
+            font-weight: 600;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
         }
 
-        /* Información Adicional */
-        .info-section {
-            max-width: 1000px;
-            margin: 0 auto 40px;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .info-card {
-            background: white;
-            padding: 20px;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-
-        .info-card h3 {
-            color: var(--azul-utec);
+        .product-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--texto-principal);
             margin-bottom: 10px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Pie de página */
-        footer {
+        .product-price {
+            font-size: 1.2rem;
+            color: var(--azul-utec);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .btn-cart {
             background-color: var(--azul-utec);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            color: #ffffff;
+            border: none;
+            padding: 11px;
+            width: 100%;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
             font-size: 0.9rem;
+        }
+
+        .btn-cart:hover {
+            background-color: var(--celeste-utec);
+        }
+
+        /* 5. Módulo de Información de Despacho */
+        .delivery-bar {
+            background-color: var(--gris-fondo-card);
+            border-top: 1px solid var(--borde-gris);
+            border-bottom: 1px solid var(--borde-gris);
+            padding: 40px 8%;
+            text-align: center;
+        }
+
+        .delivery-bar h3 {
+            color: var(--azul-utec);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .delivery-bar h4 {
+            color: var(--celeste-utec);
+            font-size: 1rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .delivery-bar p {
+            font-size: 0.9rem;
+            color: var(--texto-secundario);
+        }
+
+        /* 6. Pie de Página */
+        footer {
+            background-color: #ffffff;
+            padding: 40px 8% 20px;
+            font-size: 0.85rem;
+            color: var(--texto-secundario);
+            border-top: 1px solid var(--borde-gris);
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h5 {
+            color: var(--azul-utec);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .footer-col p {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--borde-gris);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .claims-book {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--texto-principal);
+            font-weight: 600;
+        }
+
+        /* Ajustes responsivos para celulares */
+        @media (max-width: 768px) {
+            .top-bar, header, .footer-bottom { flex-direction: column; text-align: center; gap: 10px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .hero-banner h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- 1. Barra superior oficial -->
+    <div class="top-bar">
+        <div class="contact-info">
+            <span>✉ utecstore@utec.edu.pe</span>
+            <span>📞 511 230 5000</span>
+        </div>
+        <div class="auth-links">
+            <a href="#">Iniciar sesión</a>
+            <a href="#">Registro</a>
+        </div>
+    </div>
+
+    <!-- 2. Cabecera principal -->
     <header>
-        <h1>Ingenious Electronics Store</h1>
-        <p>Indumentaria Oficial para Laboratorios UTEC</p>
+        <a href="#" class="logo-container">
+            <div class="logo-text">UTEC<span>Store</span></div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Catálogo</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon-container">
+            🛒 <span class="cart-badge">0</span>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-image">
-                <!-- Icono representativo de guardapolvo médico/laboratorio -->
-                <span class="placeholder-apron">🥼</span>
-                <div class="logo-badge">LOGO UTEC ESTAMPADO</div>
-                <p style="margin-top: 15px; font-size: 0.85rem; color: #666;">(Imagen del guardapolvo de alta calidad)</p>
-            </div>
-            
-            <div class="hero-details">
-                <h2>Guardapolvo Premium UTEC</h2>
-                <p style="color: #666; margin-bottom: 15px;">Diseñado especialmente para estudiantes de ingeniería, bioingeniería y ciencias de la Universidad de Ingeniería y Tecnología.</p>
-                
-                <div class="price">S/. 45.00</div>
-                
-                <ul class="features">
-                    <li>Material: 100% Algodón Dril (resistente y fresco).</li>
-                    <li>Estampado de alta durabilidad del logo UTEC en el pecho.</li>
-                    <li>Mangas con puño elástico para mayor seguridad en laboratorio.</li>
-                    <li>Disponibilidad de tallas: S, M, L y XL.</li>
-                </ul>
-
-                <!-- Enlace directo a WhatsApp para gestionar la venta de forma fácil -->
-                <a href="https://wa.me" class="btn-order" target="_blank">
-                    Solicitar Pedido por WhatsApp
-                </a>
-            </div>
-        </section>
-
-        <section class="info-section">
-            <div class="info-card">
-                <h3>Tallas Disponibles</h3>
-                <p>Contamos con stock variado para asegurar tu comodidad durante las extensas horas de laboratorio.</p>
-            </div>
-            <div class="info-card">
-                <h3>Entrega en Campus</h3>
-                <p>Coordinamos entregas directas en los exteriores o cercanías del campus UTEC en Barranco.</p>
-            </div>
-            <div class="info-card">
-                <h3>Calidad Garantizada</h3>
-                <p>Tela resistente a químicos ligeros y lavados continuos sin perder consistencia ni color.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Ingenious Electronics. Desarrollado y alojado mediante GitHub Pages.</p>
-    </footer>
-
-</body>
-</html>
