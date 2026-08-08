@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guardapolvos de Laboratorio | UTEC</title>
+    <title>Indumentaria de Laboratorio | UTEC</title>
     <style>
         :root { 
             --primary: #002d62; 
@@ -32,29 +32,38 @@
         .section-title { font-size: 1.8rem; color: var(--primary); margin-bottom: 5px; text-align: center; }
         .section-subtitle { color: var(--txt-sec); margin-bottom: 35px; text-align: center; }
         
-        /* Contenedor enfocado únicamente en el Guardapolvo */
-        .single-product-container {
-            max-width: 450px;
+        /* Contenedor Grid adaptable para los productos */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+            gap: 30px;
             width: 100%;
+            max-width: 1200px;
+            justify-content: center;
+            margin-bottom: 40px;
         }
         
-        .card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 25px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 25px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; position: relative; }
         
-        /* Caja para tu imagen */
+        /* Estilo especial para resaltar el Combo */
+        .card.featured {
+            border: 2px solid #e67e22;
+            box-shadow: 0 6px 20px rgba(230, 126, 34, 0.15);
+        }
+        
         .img-box { 
             background: var(--bg-card); 
             border-radius: 8px; 
-            height: auto; 
-            min-height: 300px;
+            height: 300px;
             display: flex; 
             align-items: center; 
             justify-content: center; 
             margin-bottom: 20px; 
             position: relative;
             overflow: hidden;
+            font-size: 4rem;
         }
         
-        /* Estilo para que tu foto real se adapte perfectamente */
         .img-box img {
             width: 100%;
             height: 100%;
@@ -63,11 +72,13 @@
         }
         
         .badge { position: absolute; top: 15px; left: 15px; background: #e67e22; color: #fff; font-size: 0.75rem; font-weight: bold; padding: 4px 10px; border-radius: 4px; z-index: 10; }
+        .badge.discount { background: #d35400; }
+        
         .cat { font-size: 0.8rem; text-transform: uppercase; color: var(--txt-sec); font-weight: 600; margin-bottom: 8px; }
         .name { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: var(--primary); }
         .price { font-size: 1.5rem; color: var(--primary); font-weight: 800; margin-bottom: 20px; }
+        .price span { font-size: 1.1rem; text-decoration: line-through; color: var(--txt-sec); font-weight: 400; margin-right: 8px; }
         
-        /* Botón de WhatsApp estilizado */
         .btn { 
             background: var(--accent); 
             color: #fff; 
@@ -88,6 +99,8 @@
         }
         .btn:hover { background: var(--accent-hover); transform: translateY(-1px); }
         .btn:active { transform: translateY(0); }
+        .btn.btn-featured { background: #e67e22; box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3); }
+        .btn.btn-featured:hover { background: #d35400; }
         
         .delivery { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 35px 8%; text-align: center; }
         .delivery h3 { color: var(--primary); margin-bottom: 5px; }
@@ -112,32 +125,64 @@
     </header>
 
     <section class="hero">
-        <h2>Guardapolvos Oficiales para Química</h2>
-        <p>Evita problemas en el ingreso a laboratorios. Adquiere tu indumentaria con entrega inmediata en UTEC.</p>
+        <h2>Materiales Oficiales para Laboratorio</h2>
+        <p>Evita problemas en el ingreso a tus clases de ciencias. Adquiere tu indumentaria obligatoria con entrega inmediata en UTEC.</p>
     </section>
 
     <main class="catalog">
-        <h3 class="section-title">¡Compra Directa! 🥼</h3>
+        <h3 class="section-title">¡Compra Directa! 🥼🥽</h3>
         <p class="section-subtitle">Alta resistencia y calidad garantizada para tus jornadas académicas.</p>
         
-        <div class="single-product-container">
+        <div class="products-grid">
+            
+            <!-- Producto 1: Guardapolvo -->
             <div class="card">
                 <div class="img-box">
                     <span class="badge">REQUISITO UTEC</span>
-                    <!-- 🚨 REEMPLAZA "guardapolvo.jpg" POR TU FOTO REAL SI SUBES UNA A TU REPOSITORIO -->
                     <img src="guardapolvo.jpg" alt="Guardapolvo de Laboratorio UTEC" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '🥼')">
                 </div>
                 <div>
                     <div class="cat">Indumentaria Obligatoria</div>
                     <div class="name">Guardapolvo de Laboratorio</div>
                     <div class="price">S/ 45.00</div>
-                    
-                    <!-- Botón definitivo con tu número y texto codificado -->
-                    <a class="btn" href="https://wa.me" target="_blank">
+                    <a class="btn" href="https://wa.me." target="_blank">
                         💬 Solicitar por WhatsApp
                     </a>
                 </div>
             </div>
+
+            <!-- Producto 2: Lentes de Protección -->
+            <div class="card">
+                <div class="img-box">
+                    <span class="badge">REQUISITO UTEC</span>
+                    <img src="lentes.jpg" alt="Lentes de Protección UTEC" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '🥽')">
+                </div>
+                <div>
+                    <div class="cat">Protección Ocular</div>
+                    <div class="name">Lentes de Seguridad Anti-Impacto</div>
+                    <div class="price">S/ 15.00</div>
+                    <a class="btn" href="https://wa.me." target="_blank">
+                        💬 Solicitar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 3: Combo Ahorro -->
+            <div class="card featured">
+                <div class="img-box">
+                    <span class="badge discount">MÁS VENDIDO 🔥</span>
+                    <span style="font-size: 3.5rem;">🥼+🥽</span>
+                </div>
+                <div>
+                    <div class="cat">Paquete Completo</div>
+                    <div class="name">Combo Laboratorio (Guardapolvo + Lentes)</div>
+                    <div class="price"><span>S/ 60.00</span>S/ 55.00</div>
+                    <a class="btn btn-featured" href="https://wa.me." target="_blank">
+                        🔥 Solicitar Combo por WhatsApp
+                    </a>
+                </div>
+            </div>
+
         </div>
     </main>
 
