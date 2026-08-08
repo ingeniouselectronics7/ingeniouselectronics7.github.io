@@ -1,1 +1,997 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Ingenious Electronics | Inicio
+    </title>
+
+
+    <style>
+
+        :root {
+            --primary: #002b5c;
+            --primary-dark: #001834;
+            --secondary: #00aae4;
+            --accent: #25d366;
+
+            --bg: #ffffff;
+            --bg-soft: #f5f7fa;
+
+            --border: #e2e5e9;
+
+            --txt: #1c1c1c;
+            --txt-sec: #6c757d;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--txt);
+            line-height: 1.5;
+        }
+
+
+
+        /* ========================== */
+        /* BARRA SUPERIOR */
+        /* ========================== */
+
+        .top-bar {
+            background: var(--bg-soft);
+            border-bottom: 1px solid var(--border);
+
+            padding: 10px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 20px;
+
+            font-size: 0.85rem;
+            color: var(--txt-sec);
+        }
+
+
+
+        /* ========================== */
+        /* NAVEGACIÓN */
+        /* ========================== */
+
+        .site-header {
+            background: #fff;
+
+            border-bottom: 1px solid var(--border);
+
+            padding: 18px 8%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow:
+                0 2px 10px rgba(0, 0, 0, 0.03);
+        }
+
+
+        .logo-text {
+            font-size: 1.5rem;
+
+            font-weight: 800;
+
+            color: var(--primary);
+
+            text-decoration: none;
+
+            white-space: nowrap;
+        }
+
+
+        .logo-text span {
+            color: var(--secondary);
+            font-weight: 400;
+        }
+
+
+        .navbar {
+            display: flex;
+            align-items: center;
+
+            gap: 8px;
+        }
+
+
+        .navbar a {
+            color: var(--txt);
+
+            text-decoration: none;
+
+            font-size: 0.95rem;
+
+            font-weight: 600;
+
+            padding: 10px 16px;
+
+            border-radius: 7px;
+
+            transition: 0.25s;
+        }
+
+
+        .navbar a:hover {
+            background: var(--bg-soft);
+
+            color: var(--primary);
+        }
+
+
+        .navbar a.active {
+            background: var(--primary);
+
+            color: #fff;
+        }
+
+
+
+        /* ========================== */
+        /* HERO */
+        /* ========================== */
+
+        .hero {
+            min-height: 520px;
+
+            padding: 80px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            color: #fff;
+
+            background:
+                radial-gradient(
+                    circle at 75% 25%,
+                    rgba(0, 170, 228, 0.20),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--primary) 0%,
+                    var(--primary-dark) 100%
+                );
+        }
+
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+
+        .hero-label {
+            display: inline-block;
+
+            margin-bottom: 18px;
+
+            padding: 7px 15px;
+
+            border: 1px solid
+                rgba(255, 255, 255, 0.25);
+
+            border-radius: 30px;
+
+            background:
+                rgba(255, 255, 255, 0.08);
+
+            font-size: 0.85rem;
+
+            font-weight: 600;
+
+            letter-spacing: 0.4px;
+        }
+
+
+        .hero h1 {
+            font-size: clamp(
+                2.4rem,
+                6vw,
+                4.3rem
+            );
+
+            line-height: 1.05;
+
+            margin-bottom: 22px;
+        }
+
+
+        .hero h1 span {
+            color: #20c6ff;
+        }
+
+
+        .hero p {
+            max-width: 690px;
+
+            margin: 0 auto 32px;
+
+            font-size: 1.1rem;
+
+            color: #e3eaf1;
+
+            line-height: 1.7;
+        }
+
+
+        .hero-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 14px;
+        }
+
+
+        .hero-btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-width: 180px;
+
+            padding: 14px 24px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-size: 1rem;
+
+            font-weight: 700;
+
+            transition: 0.25s;
+        }
+
+
+        .hero-btn.primary {
+            background: var(--secondary);
+
+            color: #fff;
+
+            box-shadow:
+                0 5px 18px
+                rgba(0, 170, 228, 0.25);
+        }
+
+
+        .hero-btn.primary:hover {
+            transform: translateY(-2px);
+
+            background: #0098cc;
+        }
+
+
+        .hero-btn.secondary {
+            color: #fff;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.45);
+
+            background:
+                rgba(255, 255, 255, 0.07);
+        }
+
+
+        .hero-btn.secondary:hover {
+            background:
+                rgba(255, 255, 255, 0.14);
+
+            transform: translateY(-2px);
+        }
+
+
+
+        /* ========================== */
+        /* CATEGORÍAS */
+        /* ========================== */
+
+        .categories {
+            padding: 75px 20px 90px;
+
+            background: #fff;
+        }
+
+
+        .section-heading {
+            max-width: 750px;
+
+            margin: 0 auto 45px;
+
+            text-align: center;
+        }
+
+
+        .section-heading h2 {
+            color: var(--primary);
+
+            font-size: 2rem;
+
+            margin-bottom: 10px;
+        }
+
+
+        .section-heading p {
+            color: var(--txt-sec);
+
+            font-size: 1rem;
+        }
+
+
+        .category-grid {
+            width: 100%;
+
+            max-width: 1000px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 30px;
+        }
+
+
+        .category-card {
+            min-height: 380px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            background: #fff;
+
+            text-decoration: none;
+
+            color: inherit;
+
+            display: flex;
+
+            flex-direction: column;
+
+            box-shadow:
+                0 8px 30px
+                rgba(0, 0, 0, 0.06);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+
+        .category-card:hover {
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(0, 170, 228, 0.45);
+
+            box-shadow:
+                0 16px 40px
+                rgba(0, 43, 92, 0.12);
+        }
+
+
+        .category-visual {
+            height: 210px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 5rem;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .category-card.indumentaria
+        .category-visual {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf8fc,
+                    #dff3fb
+                );
+        }
+
+
+        .category-card.componentes
+        .category-visual {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef3f9,
+                    #dfe8f3
+                );
+        }
+
+
+        .category-content {
+            padding: 26px 28px 30px;
+
+            display: flex;
+            flex-direction: column;
+
+            flex: 1;
+        }
+
+
+        .category-label {
+            color: var(--secondary);
+
+            font-size: 0.78rem;
+
+            font-weight: 800;
+
+            letter-spacing: 0.8px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 7px;
+        }
+
+
+        .category-content h3 {
+            color: var(--primary);
+
+            font-size: 1.55rem;
+
+            margin-bottom: 10px;
+        }
+
+
+        .category-content p {
+            color: var(--txt-sec);
+
+            font-size: 0.95rem;
+
+            margin-bottom: 22px;
+        }
+
+
+        .category-link {
+            margin-top: auto;
+
+            color: var(--primary);
+
+            font-weight: 700;
+
+            display: flex;
+            align-items: center;
+
+            gap: 7px;
+        }
+
+
+        .category-card:hover
+        .category-link {
+
+            color: var(--secondary);
+        }
+
+
+
+        /* ========================== */
+        /* BENEFICIOS */
+        /* ========================== */
+
+        .benefits {
+            background: var(--bg-soft);
+
+            border-top: 1px solid var(--border);
+
+            border-bottom: 1px solid var(--border);
+
+            padding: 45px 20px;
+        }
+
+
+        .benefits-grid {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 30px;
+
+            text-align: center;
+        }
+
+
+        .benefit {
+            padding: 15px;
+        }
+
+
+        .benefit-icon {
+            font-size: 2rem;
+
+            margin-bottom: 10px;
+        }
+
+
+        .benefit h4 {
+            color: var(--primary);
+
+            margin-bottom: 6px;
+
+            font-size: 1rem;
+        }
+
+
+        .benefit p {
+            color: var(--txt-sec);
+
+            font-size: 0.88rem;
+        }
+
+
+
+        /* ========================== */
+        /* FOOTER */
+        /* ========================== */
+
+        footer {
+            padding: 30px 8% 20px;
+
+            font-size: 0.85rem;
+
+            color: var(--txt-sec);
+
+            background: #fff;
+        }
+
+
+        .foot-bottom {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+        }
+
+
+        .foot-bottom a {
+            color: var(--txt);
+
+            font-weight: 600;
+
+            text-decoration: none;
+        }
+
+
+
+        /* ========================== */
+        /* RESPONSIVE */
+        /* ========================== */
+
+        @media (max-width: 768px) {
+
+            .top-bar {
+                flex-direction: column;
+
+                text-align: center;
+
+                gap: 4px;
+            }
+
+
+            .site-header {
+                flex-direction: column;
+
+                padding: 16px 20px;
+
+                gap: 12px;
+            }
+
+
+            .navbar {
+                width: 100%;
+
+                justify-content: center;
+
+                flex-wrap: wrap;
+            }
+
+
+            .navbar a {
+                padding: 8px 11px;
+
+                font-size: 0.88rem;
+            }
+
+
+            .hero {
+                min-height: 470px;
+
+                padding: 65px 20px;
+            }
+
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+
+            .category-grid {
+                grid-template-columns: 1fr;
+
+                max-width: 450px;
+            }
+
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+
+                gap: 15px;
+            }
+
+
+            .foot-bottom {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- BARRA SUPERIOR -->
+
+    <div class="top-bar">
+
+        <div>
+            ✉ ingenious.electronics7@gmail.com
+        </div>
+
+        <div>
+            📍 Entregas directas en UTEC
+        </div>
+
+    </div>
+
+
+
+    <!-- NAVEGACIÓN -->
+
+    <header class="site-header">
+
+        <a
+            href="index.html"
+            class="logo-text"
+        >
+            Ingenious<span>Electronics</span>
+        </a>
+
+
+        <nav class="navbar">
+
+            <a
+                href="index.html"
+                class="active"
+            >
+                Inicio
+            </a>
+
+            <a href="indumentaria.html">
+                Indumentaria
+            </a>
+
+            <a href="componentes.html">
+                Componentes
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-label">
+                INGENIOUS ELECTRONICS
+            </div>
+
+
+            <h1>
+                Todo lo que necesitas
+                para tu vida
+                <span>universitaria.</span>
+            </h1>
+
+
+            <p>
+                Indumentaria de laboratorio y componentes
+                electrónicos en un solo lugar, con atención
+                directa y entregas coordinadas en UTEC.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="indumentaria.html"
+                    class="hero-btn primary"
+                >
+                    Ver Indumentaria
+                </a>
+
+                <a
+                    href="componentes.html"
+                    class="hero-btn secondary"
+                >
+                    Ver Componentes
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CATEGORÍAS -->
+
+    <section class="categories">
+
+        <div class="section-heading">
+
+            <h2>
+                ¿Qué estás buscando?
+            </h2>
+
+            <p>
+                Elige una categoría y encuentra
+                rápidamente lo que necesitas.
+            </p>
+
+        </div>
+
+
+        <div class="category-grid">
+
+
+            <!-- INDUMENTARIA -->
+
+            <a
+                href="indumentaria.html"
+                class="category-card indumentaria"
+            >
+
+                <div class="category-visual">
+                    🥼 🥽
+                </div>
+
+
+                <div class="category-content">
+
+                    <div class="category-label">
+                        Laboratorio
+                    </div>
+
+                    <h3>
+                        Indumentaria
+                    </h3>
+
+                    <p>
+                        Guardapolvos, lentes de seguridad
+                        y combos preparados para tus
+                        jornadas de laboratorio.
+                    </p>
+
+                    <div class="category-link">
+                        Ver productos →
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- COMPONENTES -->
+
+            <a
+                href="componentes.html"
+                class="category-card componentes"
+            >
+
+                <div class="category-visual">
+                    ⚡ 🔌
+                </div>
+
+
+                <div class="category-content">
+
+                    <div class="category-label">
+                        Electrónica
+                    </div>
+
+                    <h3>
+                        Componentes
+                    </h3>
+
+                    <p>
+                        Componentes y accesorios
+                        electrónicos para proyectos,
+                        cursos y prototipos.
+                    </p>
+
+                    <div class="category-link">
+                        Explorar componentes →
+                    </div>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- BENEFICIOS -->
+
+    <section class="benefits">
+
+        <div class="benefits-grid">
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    📍
+                </div>
+
+                <h4>
+                    Entrega en UTEC
+                </h4>
+
+                <p>
+                    Coordinamos la entrega
+                    directamente en Barranco.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    💬
+                </div>
+
+                <h4>
+                    Compra por WhatsApp
+                </h4>
+
+                <p>
+                    Atención rápida para coordinar
+                    tu pedido.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    ⚡
+                </div>
+
+                <h4>
+                    Compra rápida
+                </h4>
+
+                <p>
+                    Encuentra lo que necesitas
+                    sin procesos complicados.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="foot-bottom">
+
+            <p>
+                Copyright © 2026 Ingenious Electronics.
+                Todos los derechos reservados.
+            </p>
+
+            <a href="#">
+                📖 Libro de Reclamaciones
+            </a>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
