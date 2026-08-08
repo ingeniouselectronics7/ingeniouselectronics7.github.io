@@ -32,6 +32,7 @@
         .section-title { font-size: 1.8rem; color: var(--primary); margin-bottom: 5px; text-align: center; }
         .section-subtitle { color: var(--txt-sec); margin-bottom: 35px; text-align: center; }
         
+        /* Contenedor Grid adaptable para los productos */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
@@ -44,16 +45,16 @@
         
         .card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 25px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; position: relative; }
         
+        /* Estilo especial para resaltar el Combo */
         .card.featured {
             border: 2px solid #e67e22;
             box-shadow: 0 6px 20px rgba(230, 126, 34, 0.15);
         }
         
         .img-box { 
-            background: #fff; 
-            border: 1px solid var(--border);
+            background: var(--bg-card); 
             border-radius: 8px; 
-            height: 320px;
+            height: 300px;
             display: flex; 
             align-items: center; 
             justify-content: center; 
@@ -134,19 +135,17 @@
         
         <div class="products-grid">
             
-            <!-- Producto 1: Guardapolvo (IMAGEN OFICIAL ACTUALIZADA) -->
+            <!-- Producto 1: Guardapolvo -->
             <div class="card">
                 <div class="img-box">
                     <span class="badge">REQUISITO UTEC</span>
-                    <img src="https://squarespace-cdn.com" alt="Guardapolvo Oficial UTEC">
+                    <img src="https://squarespace-cdn.com" alt="Guardapolvo de Laboratorio UTEC" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '🥼')">
                 </div>
                 <div>
                     <div class="cat">Indumentaria Obligatoria</div>
                     <div class="name">Guardapolvo de Laboratorio</div>
                     <div class="price">S/ 45.00</div>
-                    <a class="btn" href="https://wa.me." target="_blank">
-                        💬 Solicitar por WhatsApp
-                    </a>
+                    <a class="btn" href="https://wa.me." target="_blank">💬 Solicitar por WhatsApp</a>
                 </div>
             </div>
 
@@ -160,9 +159,7 @@
                     <div class="cat">Protección Ocular</div>
                     <div class="name">Lentes de Seguridad Anti-Impacto</div>
                     <div class="price">S/ 15.00</div>
-                    <a class="btn" href="https://wa.me." target="_blank">
-                        💬 Solicitar por WhatsApp
-                    </a>
+                    <a class="btn" href="https://wa.me." target="_blank">💬 Solicitar por WhatsApp</a>
                 </div>
             </div>
 
@@ -176,9 +173,7 @@
                     <div class="cat">Paquete Completo</div>
                     <div class="name">Combo Laboratorio (Guardapolvo + Lentes)</div>
                     <div class="price"><span>S/ 60.00</span>S/ 55.00</div>
-                    <a class="btn btn-featured" href="https://wa.me." target="_blank">
-                        🔥 Solicitar Combo por WhatsApp
-                    </a>
+                    <a class="btn btn-featured" href="https://wa.me." target="_blank">🔥 Solicitar Combo por WhatsApp</a>
                 </div>
             </div>
 
