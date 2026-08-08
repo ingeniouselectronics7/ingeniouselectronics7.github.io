@@ -2,141 +2,81 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>
-        Ingenious Electronics | Materiales de Laboratorio
-    </title>
-
+    <title>Ingenious Electronics | Materiales de Laboratorio</title>
 
     <style>
 
         :root {
-
             --primary: #002b5c;
-
             --accent: #25d366;
-
             --accent-hover: #1ebe5d;
-
             --bg-bar: #f5f7fa;
-
             --bg-card: #f8f9fb;
-
             --border: #e2e5e9;
-
             --txt: #1c1c1c;
-
             --txt-sec: #6c757d;
-
         }
-
 
         * {
-
             margin: 0;
-
             padding: 0;
-
             box-sizing: border-box;
-
         }
-
 
         body {
-
             font-family: Arial, Helvetica, sans-serif;
-
             background: #fff;
-
             color: var(--txt);
-
             line-height: 1.5;
-
         }
-
-
 
         /* ========================== */
         /* BARRA SUPERIOR */
         /* ========================== */
 
         .top-bar {
-
             background: var(--bg-bar);
-
             border-bottom: 1px solid var(--border);
-
             padding: 10px 8%;
-
             display: flex;
-
             justify-content: space-between;
-
             font-size: 0.85rem;
-
             color: var(--txt-sec);
-
         }
-
-
 
         /* ========================== */
         /* HEADER */
         /* ========================== */
 
         header {
-
             padding: 20px 8%;
-
             display: flex;
-
             justify-content: center;
-
             align-items: center;
-
             background: #fff;
-
             border-bottom: 1px solid var(--border);
-
         }
-
 
         .logo-text {
-
             font-size: 1.5rem;
-
             font-weight: 800;
-
             color: var(--primary);
-
             text-decoration: none;
-
         }
-
 
         .logo-text span {
-
             color: #00aae4;
-
             font-weight: 400;
-
         }
-
-
 
         /* ========================== */
         /* HERO */
         /* ========================== */
 
         .hero {
-
             background: linear-gradient(
                 135deg,
                 var(--primary) 0%,
@@ -144,85 +84,51 @@
             );
 
             color: #fff;
-
             text-align: center;
-
             padding: 40px 20px;
-
         }
-
 
         .hero h2 {
-
             font-size: 2.2rem;
-
             margin-bottom: 10px;
-
         }
-
 
         .hero p {
-
             color: #e0e0e0;
-
             max-width: 600px;
-
             margin: 0 auto;
-
             font-weight: 300;
-
         }
-
-
 
         /* ========================== */
         /* CATÁLOGO */
         /* ========================== */
 
         .catalog {
-
             padding: 50px 20px;
-
             display: flex;
-
             flex-direction: column;
-
             align-items: center;
-
         }
-
 
         .section-title {
-
             font-size: 1.8rem;
-
             color: var(--primary);
-
             margin-bottom: 5px;
-
             text-align: center;
-
         }
-
 
         .section-subtitle {
-
             color: var(--txt-sec);
-
             margin-bottom: 35px;
-
             text-align: center;
-
         }
-
-
 
         /* ========================== */
         /* GRID DE PRODUCTOS */
         /* ========================== */
 
         .products-grid {
-
             display: grid;
 
             grid-template-columns: repeat(
@@ -231,175 +137,122 @@
             );
 
             gap: 30px;
-
             width: 100%;
-
             max-width: 1200px;
-
             justify-content: center;
-
             margin-bottom: 40px;
-
         }
-
-
 
         /* ========================== */
         /* TARJETAS */
         /* ========================== */
 
         .card {
-
             background: #fff;
-
             border: 1px solid var(--border);
-
             border-radius: 12px;
-
             padding: 25px;
-
             text-align: center;
 
             box-shadow:
                 0 4px 15px rgba(0, 0, 0, 0.05);
 
             display: flex;
-
             flex-direction: column;
-
             justify-content: space-between;
-
             position: relative;
-
         }
 
-
-
-        /* Combo destacado */
-
         .card.featured {
-
             border: 2px solid #e67e22;
 
             box-shadow:
                 0 6px 20px rgba(230, 126, 34, 0.15);
-
         }
-
-
 
         /* ========================== */
         /* CONTENEDOR DE IMÁGENES */
         /* ========================== */
 
         .img-box {
-
             background: var(--bg-card);
-
             border-radius: 8px;
-
             height: 300px;
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
 
             margin-bottom: 20px;
 
             position: relative;
-
             overflow: hidden;
-
         }
-
 
         .img-box img {
-
             width: 100%;
-
             height: 100%;
-
             object-fit: contain;
-
             border-radius: 8px;
-
         }
-
-
 
         /* ========================== */
         /* CARRUSEL */
         /* ========================== */
 
         .product-slider {
-
             position: relative;
-
         }
-
 
         .slider-images {
-
             width: 100%;
-
             height: 100%;
-
             position: relative;
-
         }
 
-
         /*
-        Todas las imágenes ocupan
-        exactamente el mismo espacio.
+        Todas las fotos permanecen una
+        encima de otra.
+
+        Solo cambiamos su opacidad.
+        Esto genera un crossfade suave.
         */
 
         .slide {
-
             position: absolute;
 
             top: 0;
-
             left: 0;
 
             width: 100%;
-
             height: 100%;
 
             object-fit: contain;
 
             opacity: 0;
 
-            visibility: hidden;
+            pointer-events: none;
 
-            transition: opacity 0.4s ease;
+            /*
+            CAMBIO IMPORTANTE:
+            1.4 segundos de transición.
+            */
+            transition:
+                opacity 1.4s ease-in-out;
 
+            z-index: 1;
         }
-
-
-        /*
-        Solo la imagen activa
-        es visible.
-        */
 
         .slide.active {
-
             opacity: 1;
-
-            visibility: visible;
-
+            z-index: 2;
         }
 
-
-
         /* ========================== */
-        /* FLECHAS DEL CARRUSEL */
+        /* FLECHAS */
         /* ========================== */
 
         .slider-arrow {
-
             position: absolute;
 
             top: 50%;
@@ -407,160 +260,118 @@
             transform: translateY(-50%);
 
             width: 40px;
-
             height: 40px;
 
             border: none;
-
             border-radius: 50%;
 
-            background: rgba(0, 0, 0, 0.45);
-
+            background: rgba(0, 0, 0, 0.40);
             color: white;
 
             font-size: 1.35rem;
-
             font-weight: bold;
 
             cursor: pointer;
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
 
             z-index: 30;
 
             transition:
-                background 0.2s,
-                transform 0.2s;
-
+                background 0.3s ease,
+                transform 0.2s ease,
+                opacity 0.3s ease;
         }
-
 
         .slider-arrow:hover {
-
-            background: rgba(0, 0, 0, 0.7);
-
+            background: rgba(0, 0, 0, 0.65);
         }
 
-
         .slider-arrow:active {
-
             transform:
                 translateY(-50%)
                 scale(0.92);
-
         }
-
 
         .slider-arrow.prev {
-
             left: 10px;
-
         }
-
 
         .slider-arrow.next {
-
             right: 10px;
-
         }
 
-
-
         /* ========================== */
-        /* PUNTOS DEL CARRUSEL */
+        /* PUNTOS INDICADORES */
         /* ========================== */
 
         .slider-dots {
-
             position: absolute;
 
             bottom: 12px;
-
             left: 50%;
 
             transform: translateX(-50%);
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
 
             gap: 8px;
 
             z-index: 30;
 
-            background: rgba(255, 255, 255, 0.75);
+            background: rgba(255, 255, 255, 0.78);
 
             padding: 6px 9px;
 
             border-radius: 20px;
-
         }
 
-
         .dot {
-
             width: 9px;
-
             height: 9px;
 
             border-radius: 50%;
 
             border: none;
 
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.30);
 
             cursor: pointer;
 
             padding: 0;
 
             transition:
-                transform 0.2s,
-                background 0.2s;
-
+                transform 0.3s ease,
+                background 0.3s ease;
         }
-
 
         .dot:hover {
-
             transform: scale(1.2);
-
         }
-
 
         .dot.active {
-
             background: var(--primary);
-
-            transform: scale(1.3);
-
+            transform: scale(1.35);
         }
-
-
 
         /* ========================== */
         /* BADGES */
         /* ========================== */
 
         .badge {
-
             position: absolute;
 
             top: 15px;
-
             left: 15px;
 
             background: #e67e22;
-
             color: #fff;
 
             font-size: 0.75rem;
-
             font-weight: bold;
 
             padding: 4px 10px;
@@ -568,26 +379,18 @@
             border-radius: 4px;
 
             z-index: 40;
-
         }
-
 
         .badge.discount {
-
             background: #d35400;
-
         }
 
-
-
         /* ========================== */
-        /* INFORMACIÓN DEL PRODUCTO */
+        /* INFORMACIÓN PRODUCTO */
         /* ========================== */
 
         .cat {
-
             font-size: 0.8rem;
-
             text-transform: uppercase;
 
             color: var(--txt-sec);
@@ -595,25 +398,18 @@
             font-weight: 600;
 
             margin-bottom: 8px;
-
         }
 
-
         .name {
-
             font-size: 1.2rem;
-
             font-weight: 700;
 
             margin-bottom: 10px;
 
             color: var(--primary);
-
         }
 
-
         .price {
-
             font-size: 1.5rem;
 
             color: var(--primary);
@@ -621,12 +417,9 @@
             font-weight: 800;
 
             margin-bottom: 20px;
-
         }
 
-
         .price span {
-
             font-size: 1.1rem;
 
             text-decoration: line-through;
@@ -636,19 +429,14 @@
             font-weight: 400;
 
             margin-right: 8px;
-
         }
-
-
 
         /* ========================== */
         /* BOTONES WHATSAPP */
         /* ========================== */
 
         .btn {
-
             background: var(--accent);
-
             color: #fff;
 
             border: none;
@@ -660,7 +448,6 @@
             border-radius: 6px;
 
             font-size: 1.05rem;
-
             font-weight: 700;
 
             cursor: pointer;
@@ -672,57 +459,40 @@
             display: inline-flex;
 
             align-items: center;
-
             justify-content: center;
 
             gap: 10px;
 
             box-shadow:
                 0 4px 12px rgba(37, 211, 102, 0.2);
-
         }
 
-
         .btn:hover {
-
             background: var(--accent-hover);
 
             transform: translateY(-1px);
-
         }
-
 
         .btn:active {
-
             transform: translateY(0);
-
         }
 
-
         .btn.btn-featured {
-
             background: #e67e22;
 
             box-shadow:
                 0 4px 12px rgba(230, 126, 34, 0.3);
-
         }
-
 
         .btn.btn-featured:hover {
-
             background: #d35400;
-
         }
-
-
 
         /* ========================== */
         /* ENTREGA */
         /* ========================== */
 
         .delivery {
-
             background: var(--bg-card);
 
             border-top:
@@ -734,44 +504,31 @@
             padding: 35px 8%;
 
             text-align: center;
-
         }
 
-
         .delivery h3 {
-
             color: var(--primary);
 
             margin-bottom: 5px;
-
         }
 
-
         .delivery h4 {
-
             color: #00aae4;
 
             margin-bottom: 5px;
-
         }
 
-
         .delivery p {
-
             font-size: 0.9rem;
 
             color: var(--txt-sec);
-
         }
-
-
 
         /* ========================== */
         /* FOOTER */
         /* ========================== */
 
         footer {
-
             padding: 30px 8% 20px;
 
             font-size: 0.85rem;
@@ -780,12 +537,9 @@
 
             border-top:
                 1px solid var(--border);
-
         }
 
-
         .foot-bottom {
-
             display: flex;
 
             justify-content: space-between;
@@ -793,10 +547,7 @@
             flex-wrap: wrap;
 
             gap: 15px;
-
         }
-
-
 
         /* ========================== */
         /* CELULARES */
@@ -807,40 +558,28 @@
             .top-bar,
             header,
             .foot-bottom {
-
                 flex-direction: column;
 
                 text-align: center;
 
                 gap: 10px;
-
             }
-
 
             .hero h2 {
-
                 font-size: 1.8rem;
-
             }
 
-
             .products-grid {
-
                 grid-template-columns: 1fr;
 
                 max-width: 400px;
-
             }
 
-
             .slider-arrow {
-
                 width: 36px;
-
                 height: 36px;
 
                 font-size: 1.15rem;
-
             }
 
         }
@@ -850,9 +589,7 @@
 </head>
 
 
-
 <body>
-
 
 
     <!-- ============================ -->
@@ -862,15 +599,10 @@
     <div class="top-bar">
 
         <div>
-
             ✉ ingenious.electronics7@gmail.com
-
             |
-
             📞 Pedidos directos campus UTEC
-
         </div>
-
 
         <div>
 
@@ -890,7 +622,6 @@
     </div>
 
 
-
     <!-- ============================ -->
     <!-- HEADER -->
     <!-- ============================ -->
@@ -901,13 +632,10 @@
             href="#"
             class="logo-text"
         >
-
             Ingenious<span>Electronics</span>
-
         </a>
 
     </header>
-
 
 
     <!-- ============================ -->
@@ -917,22 +645,16 @@
     <section class="hero">
 
         <h2>
-
             Materiales Oficiales para Laboratorio
-
         </h2>
 
-
         <p>
-
             Evita problemas en el ingreso a tus clases
             de ciencias. Adquiere tu indumentaria
             obligatoria con entrega inmediata en UTEC.
-
         </p>
 
     </section>
-
 
 
     <!-- ============================ -->
@@ -943,23 +665,17 @@
 
 
         <h3 class="section-title">
-
             ¡Compra Directa! 🥼🥽
-
         </h3>
 
 
         <p class="section-subtitle">
-
             Alta resistencia y calidad garantizada
             para tus jornadas académicas.
-
         </p>
 
 
-
         <div class="products-grid">
-
 
 
             <!-- ================================= -->
@@ -973,11 +689,8 @@
 
 
                     <span class="badge">
-
                         REQUISITO UTEC
-
                     </span>
-
 
 
                     <div class="slider-images">
@@ -1007,9 +720,6 @@
                     </div>
 
 
-
-                    <!-- Flecha izquierda -->
-
                     <button
                         class="slider-arrow prev"
                         type="button"
@@ -1019,9 +729,6 @@
                     </button>
 
 
-
-                    <!-- Flecha derecha -->
-
                     <button
                         class="slider-arrow next"
                         type="button"
@@ -1030,9 +737,6 @@
                         ❯
                     </button>
 
-
-
-                    <!-- Indicadores -->
 
                     <div class="slider-dots">
 
@@ -1067,30 +771,22 @@
                 </div>
 
 
-
                 <div>
 
 
                     <div class="cat">
-
                         Indumentaria Obligatoria
-
                     </div>
 
 
                     <div class="name">
-
                         Guardapolvo de Laboratorio
-
                     </div>
 
 
                     <div class="price">
-
                         S/ 55.00
-
                     </div>
-
 
 
                     <a
@@ -1099,9 +795,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-
                         💬 Solicitar por WhatsApp
-
                     </a>
 
 
@@ -1109,8 +803,6 @@
 
 
             </div>
-
-
 
 
             <!-- ================================= -->
@@ -1124,11 +816,8 @@
 
 
                     <span class="badge">
-
                         REQUISITO UTEC
-
                     </span>
-
 
 
                     <div class="slider-images">
@@ -1158,9 +847,6 @@
                     </div>
 
 
-
-                    <!-- Flecha izquierda -->
-
                     <button
                         class="slider-arrow prev"
                         type="button"
@@ -1170,9 +856,6 @@
                     </button>
 
 
-
-                    <!-- Flecha derecha -->
-
                     <button
                         class="slider-arrow next"
                         type="button"
@@ -1181,9 +864,6 @@
                         ❯
                     </button>
 
-
-
-                    <!-- Indicadores -->
 
                     <div class="slider-dots">
 
@@ -1218,30 +898,22 @@
                 </div>
 
 
-
                 <div>
 
 
                     <div class="cat">
-
                         Protección Ocular
-
                     </div>
 
 
                     <div class="name">
-
                         Lentes de Seguridad Anti-Impacto
-
                     </div>
 
 
                     <div class="price">
-
                         S/ 8.00
-
                     </div>
-
 
 
                     <a
@@ -1250,9 +922,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-
                         💬 Solicitar por WhatsApp
-
                     </a>
 
 
@@ -1260,8 +930,6 @@
 
 
             </div>
-
-
 
 
             <!-- ================================= -->
@@ -1275,11 +943,8 @@
 
 
                     <span class="badge discount">
-
                         MÁS VENDIDO 🔥
-
                     </span>
-
 
 
                     <div class="slider-images">
@@ -1309,9 +974,6 @@
                     </div>
 
 
-
-                    <!-- Flecha izquierda -->
-
                     <button
                         class="slider-arrow prev"
                         type="button"
@@ -1321,9 +983,6 @@
                     </button>
 
 
-
-                    <!-- Flecha derecha -->
-
                     <button
                         class="slider-arrow next"
                         type="button"
@@ -1332,9 +991,6 @@
                         ❯
                     </button>
 
-
-
-                    <!-- Indicadores -->
 
                     <div class="slider-dots">
 
@@ -1369,40 +1025,29 @@
                 </div>
 
 
-
                 <div>
 
 
                     <div class="cat">
-
                         Paquete Completo
-
                     </div>
 
 
                     <div class="name">
-
                         Combo Laboratorio
                         (Guardapolvo + Lentes)
-
                     </div>
 
 
                     <div class="price">
 
-
                         <span>
-
                             S/ 63.00
-
                         </span>
-
 
                         S/ 60.00
 
-
                     </div>
-
 
 
                     <a
@@ -1411,9 +1056,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-
                         🔥 Solicitar Combo por WhatsApp
-
                     </a>
 
 
@@ -1429,38 +1072,26 @@
     </main>
 
 
-
     <!-- ============================ -->
     <!-- ENTREGA -->
     <!-- ============================ -->
 
     <section class="delivery">
 
-
         <h3>
-
             Modalidad de Entrega
-
         </h3>
 
-
         <h4>
-
             Puntos Estratégicos
-
         </h4>
 
-
         <p>
-
             Coordinamos entregas directas en Barranco
             (en la puerta o alrededores del campus UTEC).
-
         </p>
 
-
     </section>
-
 
 
     <!-- ============================ -->
@@ -1474,12 +1105,9 @@
 
 
             <p>
-
                 Copyright © 2026 Ingenious Electronics.
                 Todos los derechos reservados.
-
             </p>
-
 
 
             <a
@@ -1490,9 +1118,7 @@
                     font-weight: 600;
                 "
             >
-
                 📖 Libro de Reclamaciones
-
             </a>
 
 
@@ -1502,28 +1128,16 @@
     </footer>
 
 
-
     <!-- ============================ -->
-    <!-- JAVASCRIPT DE LOS CARRUSELES -->
+    <!-- JAVASCRIPT CARRUSELES -->
     <!-- ============================ -->
 
     <script>
-
-        /*
-        Buscamos todos los carruseles
-        existentes en la página.
-        */
 
         document
             .querySelectorAll('.product-slider')
             .forEach(slider => {
 
-
-                /*
-                Obtenemos las imágenes,
-                puntos y flechas
-                del carrusel actual.
-                */
 
                 const slides =
                     slider.querySelectorAll('.slide');
@@ -1546,141 +1160,64 @@
                 let interval;
 
 
-
-                /*
-                Muestra una imagen
-                determinada.
-                */
-
                 function showSlide(index) {
 
 
-                    /*
-                    Si llegamos después
-                    de la última imagen,
-                    volvemos a la primera.
-                    */
-
                     if (index >= slides.length) {
-
                         index = 0;
-
                     }
 
-
-                    /*
-                    Si vamos hacia atrás
-                    desde la primera,
-                    mostramos la última.
-                    */
 
                     if (index < 0) {
-
-                        index =
-                            slides.length - 1;
-
+                        index = slides.length - 1;
                     }
 
-
-
-                    /*
-                    Quitamos "active"
-                    de todas las imágenes.
-                    */
 
                     slides.forEach(slide => {
 
-                        slide.classList.remove(
-                            'active'
-                        );
+                        slide.classList.remove('active');
 
                     });
 
-
-
-                    /*
-                    Quitamos "active"
-                    de todos los puntos.
-                    */
 
                     dots.forEach(dot => {
 
-                        dot.classList.remove(
-                            'active'
-                        );
+                        dot.classList.remove('active');
 
                     });
 
 
-
-                    /*
-                    Guardamos la imagen actual.
-                    */
-
                     currentSlide = index;
 
-
-
-                    /*
-                    Activamos la imagen
-                    correspondiente.
-                    */
 
                     slides[currentSlide]
                         .classList.add('active');
 
 
-
-                    /*
-                    Activamos también
-                    su punto correspondiente.
-                    */
-
                     dots[currentSlide]
                         .classList.add('active');
 
+
                 }
 
-
-
-                /*
-                Siguiente imagen.
-                */
 
                 function nextSlide() {
 
-                    showSlide(
-                        currentSlide + 1
-                    );
+                    showSlide(currentSlide + 1);
 
                 }
 
-
-
-                /*
-                Imagen anterior.
-                */
 
                 function prevSlide() {
 
-                    showSlide(
-                        currentSlide - 1
-                    );
+                    showSlide(currentSlide - 1);
 
                 }
 
 
-
-                /*
-                Inicia el cambio automático
-                cada 5 segundos.
-                */
-
                 function startSlider() {
 
-
                     clearInterval(interval);
-
 
                     interval = setInterval(
                         nextSlide,
@@ -1690,23 +1227,12 @@
                 }
 
 
-
-                /*
-                Reinicia el contador
-                después de una acción manual.
-                */
-
                 function resetSlider() {
 
                     startSlider();
 
                 }
 
-
-
-                /*
-                Flecha derecha.
-                */
 
                 nextButton.addEventListener(
                     'click',
@@ -1720,11 +1246,6 @@
                 );
 
 
-
-                /*
-                Flecha izquierda.
-                */
-
                 prevButton.addEventListener(
                     'click',
                     () => {
@@ -1736,13 +1257,6 @@
                     }
                 );
 
-
-
-                /*
-                Cada punto puede
-                seleccionar directamente
-                una imagen.
-                */
 
                 dots.forEach(
                     (dot, index) => {
@@ -1764,13 +1278,6 @@
                 );
 
 
-
-                /*
-                Cuando el mouse está encima
-                de las imágenes,
-                pausamos el cambio automático.
-                */
-
                 slider.addEventListener(
                     'mouseenter',
                     () => {
@@ -1781,12 +1288,6 @@
                 );
 
 
-
-                /*
-                Cuando el mouse sale,
-                vuelve a funcionar.
-                */
-
                 slider.addEventListener(
                     'mouseleave',
                     () => {
@@ -1796,11 +1297,6 @@
                     }
                 );
 
-
-
-                /*
-                Comenzamos el carrusel.
-                */
 
                 startSlider();
 
