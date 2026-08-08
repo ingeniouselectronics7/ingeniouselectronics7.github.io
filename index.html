@@ -3,195 +3,628 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indumentaria de Laboratorio | UTEC</title>
+
+    <title>Ingenious Electronics | Materiales de Laboratorio</title>
+
     <style>
-        :root { 
-            --primary: #002d62; 
-            --accent: #25D366; /* Verde oficial de WhatsApp */
-            --accent-hover: #20ba5a;
-            --txt: #333; 
-            --txt-sec: #666; 
-            --bg-bar: #f1f3f5; 
-            --bg-card: #f8f9fa; 
-            --border: #e9ecef; 
+        :root {
+            --primary: #002b5c;
+            --accent: #25d366;
+            --accent-hover: #1ebe5d;
+            --bg-bar: #f5f7fa;
+            --bg-card: #f8f9fb;
+            --border: #e2e5e9;
+            --txt: #1c1c1c;
+            --txt-sec: #6c757d;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background: #fff; color: var(--txt); overflow-x: hidden; }
-        
-        .top-bar { background: var(--bg-bar); border-bottom: 1px solid var(--border); padding: 10px 8%; display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--txt-sec); }
-        
-        header { padding: 20px 8%; display: flex; justify-content: center; align-items: center; background: #fff; border-bottom: 1px solid var(--border); }
-        .logo-text { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; }
-        .logo-text span { color: #00aae4; font-weight: 400; }
-        
-        .hero { background: linear-gradient(135deg, var(--primary) 0%, #001834 100%); color: #fff; text-align: center; padding: 40px 20px; }
-        .hero h2 { font-size: 2.2rem; margin-bottom: 10px; }
-        .hero p { color: #e0e0e0; max-width: 600px; margin: 0 auto; font-weight: 300; }
-        
-        .catalog { padding: 50px 20px; display: flex; flex-direction: column; align-items: center; }
-        .section-title { font-size: 1.8rem; color: var(--primary); margin-bottom: 5px; text-align: center; }
-        .section-subtitle { color: var(--txt-sec); margin-bottom: 35px; text-align: center; }
-        
-        /* Contenedor Grid adaptable para los productos */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff;
+            color: var(--txt);
+            line-height: 1.5;
+        }
+
+        .top-bar {
+            background: var(--bg-bar);
+            border-bottom: 1px solid var(--border);
+            padding: 10px 8%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--txt-sec);
+        }
+
+        header {
+            padding: 20px 8%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo-text span {
+            color: #00aae4;
+            font-weight: 400;
+        }
+
+        .hero {
+            background: linear-gradient(
+                135deg,
+                var(--primary) 0%,
+                #001834 100%
+            );
+
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #e0e0e0;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .catalog {
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: var(--txt-sec);
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        /* Contenedor adaptable para los productos */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(300px, 400px)
+            );
+
             gap: 30px;
             width: 100%;
             max-width: 1200px;
             justify-content: center;
             margin-bottom: 40px;
         }
-        
-        .card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 25px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; position: relative; }
-        
-        /* Estilo especial para resaltar el Combo */
+
+        .card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.05);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        /* Estilo especial para el combo */
         .card.featured {
             border: 2px solid #e67e22;
-            box-shadow: 0 6px 20px rgba(230, 126, 34, 0.15);
+
+            box-shadow:
+                0 6px 20px rgba(230, 126, 34, 0.15);
         }
-        
-        .img-box { 
-            background: var(--bg-card); 
-            border-radius: 8px; 
+
+        .img-box {
+            background: var(--bg-card);
+            border-radius: 8px;
             height: 300px;
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            margin-bottom: 20px; 
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 20px;
             position: relative;
             overflow: hidden;
             font-size: 4rem;
         }
-        
+
         .img-box img {
             width: 100%;
             height: 100%;
             object-fit: contain;
             border-radius: 8px;
         }
-        
-        .badge { position: absolute; top: 15px; left: 15px; background: #e67e22; color: #fff; font-size: 0.75rem; font-weight: bold; padding: 4px 10px; border-radius: 4px; z-index: 10; }
-        .badge.discount { background: #d35400; }
-        
-        .cat { font-size: 0.8rem; text-transform: uppercase; color: var(--txt-sec); font-weight: 600; margin-bottom: 8px; }
-        .name { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: var(--primary); }
-        .price { font-size: 1.5rem; color: var(--primary); font-weight: 800; margin-bottom: 20px; }
-        .price span { font-size: 1.1rem; text-decoration: line-through; color: var(--txt-sec); font-weight: 400; margin-right: 8px; }
-        
-        .btn { 
-            background: var(--accent); 
-            color: #fff; 
-            border: none; 
-            padding: 14px; 
-            width: 100%; 
-            border-radius: 6px; 
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+
+            background: #e67e22;
+            color: #fff;
+
+            font-size: 0.75rem;
+            font-weight: bold;
+
+            padding: 4px 10px;
+            border-radius: 4px;
+
+            z-index: 10;
+        }
+
+        .badge.discount {
+            background: #d35400;
+        }
+
+        .cat {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--txt-sec);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .price span {
+            font-size: 1.1rem;
+            text-decoration: line-through;
+            color: var(--txt-sec);
+            font-weight: 400;
+            margin-right: 8px;
+        }
+
+        .btn {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+
+            padding: 14px;
+            width: 100%;
+
+            border-radius: 6px;
             font-size: 1.05rem;
-            font-weight: 700; 
-            cursor: pointer; 
-            transition: 0.2s; 
-            text-decoration: none; 
-            display: inline-flex; 
+            font-weight: 700;
+
+            cursor: pointer;
+            transition: 0.2s;
+
+            text-decoration: none;
+
+            display: inline-flex;
             align-items: center;
             justify-content: center;
+
             gap: 10px;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+
+            box-shadow:
+                0 4px 12px rgba(37, 211, 102, 0.2);
         }
-        .btn:hover { background: var(--accent-hover); transform: translateY(-1px); }
-        .btn:active { transform: translateY(0); }
-        .btn.btn-featured { background: #e67e22; box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3); }
-        .btn.btn-featured:hover { background: #d35400; }
-        
-        .delivery { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 35px 8%; text-align: center; }
-        .delivery h3 { color: var(--primary); margin-bottom: 5px; }
-        .delivery h4 { color: #00aae4; margin-bottom: 5px; }
-        .delivery p { font-size: 0.9rem; color: var(--txt-sec); }
-        
-        footer { padding: 30px 8% 20px; font-size: 0.85rem; color: var(--txt-sec); border-top: 1px solid var(--border); }
-        .foot-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
-        
-        @media (max-width: 768px) { .top-bar, header, .foot-bottom { flex-direction: column; text-align: center; gap: 10px; } }
+
+        .btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn.btn-featured {
+            background: #e67e22;
+
+            box-shadow:
+                0 4px 12px rgba(230, 126, 34, 0.3);
+        }
+
+        .btn.btn-featured:hover {
+            background: #d35400;
+        }
+
+        .delivery {
+            background: var(--bg-card);
+
+            border-top:
+                1px solid var(--border);
+
+            border-bottom:
+                1px solid var(--border);
+
+            padding: 35px 8%;
+            text-align: center;
+        }
+
+        .delivery h3 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .delivery h4 {
+            color: #00aae4;
+            margin-bottom: 5px;
+        }
+
+        .delivery p {
+            font-size: 0.9rem;
+            color: var(--txt-sec);
+        }
+
+        footer {
+            padding: 30px 8% 20px;
+            font-size: 0.85rem;
+            color: var(--txt-sec);
+
+            border-top:
+                1px solid var(--border);
+        }
+
+        .foot-bottom {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+
+            .top-bar,
+            header,
+            .foot-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+        }
     </style>
 </head>
+
+
 <body>
 
+    <!-- BARRA SUPERIOR -->
     <div class="top-bar">
-        <div>✉ contacto@ingeniouselectronics.com | 📞 Pedidos directos campus UTEC</div>
-        <div><a href="#" style="color: var(--txt); text-decoration: none; font-weight: 500;">Ayuda</a></div>
+
+        <div>
+            ✉ contacto@ingeniouselectronics.com
+            |
+            📞 Pedidos directos campus UTEC
+        </div>
+
+        <div>
+            <a
+                href="#"
+                style="
+                    color: var(--txt);
+                    text-decoration: none;
+                    font-weight: 500;
+                "
+            >
+                Ayuda
+            </a>
+        </div>
+
     </div>
 
+
+    <!-- HEADER -->
     <header>
-        <a href="#" class="logo-text">Ingenious<span>Electronics</span></a>
+
+        <a
+            href="#"
+            class="logo-text"
+        >
+            Ingenious<span>Electronics</span>
+        </a>
+
     </header>
 
+
+    <!-- HERO -->
     <section class="hero">
-        <h2>Materiales Oficiales para Laboratorio</h2>
-        <p>Evita problemas en el ingreso a tus clases de ciencias. Adquiere tu indumentaria obligatoria con entrega inmediata en UTEC.</p>
+
+        <h2>
+            Materiales Oficiales para Laboratorio
+        </h2>
+
+        <p>
+            Evita problemas en el ingreso a tus clases
+            de ciencias. Adquiere tu indumentaria
+            obligatoria con entrega inmediata en UTEC.
+        </p>
+
     </section>
 
+
+    <!-- CATÁLOGO -->
     <main class="catalog">
-        <h3 class="section-title">¡Compra Directa! 🥼🥽</h3>
-        <p class="section-subtitle">Alta resistencia y calidad garantizada para tus jornadas académicas.</p>
-        
+
+        <h3 class="section-title">
+            ¡Compra Directa! 🥼🥽
+        </h3>
+
+        <p class="section-subtitle">
+            Alta resistencia y calidad garantizada
+            para tus jornadas académicas.
+        </p>
+
+
         <div class="products-grid">
-            
-            <!-- Producto 1: Guardapolvo -->
+
+
+            <!-- ============================ -->
+            <!-- PRODUCTO 1: GUARDAPOLVO -->
+            <!-- ============================ -->
+
             <div class="card">
+
                 <div class="img-box">
-                    <span class="badge">REQUISITO UTEC</span>
-                    <img src="https://squarespace-cdn.com" alt="Guardapolvo de Laboratorio UTEC" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '🥼')">
+
+                    <span class="badge">
+                        REQUISITO UTEC
+                    </span>
+
+                    <img
+                        src="https://squarespace-cdn.com"
+                        alt="Guardapolvo de Laboratorio UTEC"
+                        onerror="
+                            this.style.display='none';
+                            this.parentNode.insertAdjacentHTML(
+                                'beforeend',
+                                '🥼'
+                            );
+                        "
+                    >
+
                 </div>
+
+
                 <div>
-                    <div class="cat">Indumentaria Obligatoria</div>
-                    <div class="name">Guardapolvo de Laboratorio</div>
-                    <div class="price">S/ 45.00</div>
-                    <a class="btn" href="https://wa.me." target="_blank">💬 Solicitar por WhatsApp</a>
+
+                    <div class="cat">
+                        Indumentaria Obligatoria
+                    </div>
+
+                    <div class="name">
+                        Guardapolvo de Laboratorio
+                    </div>
+
+                    <div class="price">
+                        S/ 45.00
+                    </div>
+
+
+                    <a
+                        class="btn"
+                        href="https://wa.me/51912561273?text=Hola%20Ingenious%20Electronics%20%F0%9F%91%8B%2C%20soy%20estudiante%20de%20UTEC%20y%20quiero%20comprar%20el%20Guardapolvo%20de%20Laboratorio%20por%20S%2F%2045.00.%20%C2%BFC%C3%B3mo%20puedo%20coordinar%20la%20entrega%3F"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        💬 Solicitar por WhatsApp
+                    </a>
+
                 </div>
+
             </div>
 
-            <!-- Producto 2: Lentes de Protección -->
+
+
+            <!-- ============================ -->
+            <!-- PRODUCTO 2: LENTES -->
+            <!-- ============================ -->
+
             <div class="card">
+
                 <div class="img-box">
-                    <span class="badge">REQUISITO UTEC</span>
-                    <img src="lentes.jpg" alt="Lentes de Protección UTEC" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '🥽')">
+
+                    <span class="badge">
+                        REQUISITO UTEC
+                    </span>
+
+                    <img
+                        src="lentes.jpg"
+                        alt="Lentes de Protección UTEC"
+                        onerror="
+                            this.style.display='none';
+                            this.parentNode.insertAdjacentHTML(
+                                'beforeend',
+                                '🥽'
+                            );
+                        "
+                    >
+
                 </div>
+
+
                 <div>
-                    <div class="cat">Protección Ocular</div>
-                    <div class="name">Lentes de Seguridad Anti-Impacto</div>
-                    <div class="price">S/ 15.00</div>
-                    <a class="btn" href="https://wa.me." target="_blank">💬 Solicitar por WhatsApp</a>
+
+                    <div class="cat">
+                        Protección Ocular
+                    </div>
+
+                    <div class="name">
+                        Lentes de Seguridad Anti-Impacto
+                    </div>
+
+                    <div class="price">
+                        S/ 15.00
+                    </div>
+
+
+                    <a
+                        class="btn"
+                        href="https://wa.me/51912561273?text=Hola%20Ingenious%20Electronics%20%F0%9F%91%8B%2C%20soy%20estudiante%20de%20UTEC%20y%20quiero%20comprar%20los%20Lentes%20de%20Seguridad%20Anti-Impacto%20por%20S%2F%2015.00.%20%C2%BFC%C3%B3mo%20puedo%20coordinar%20la%20entrega%3F"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        💬 Solicitar por WhatsApp
+                    </a>
+
                 </div>
+
             </div>
 
-            <!-- Producto 3: Combo Ahorro -->
+
+
+            <!-- ============================ -->
+            <!-- PRODUCTO 3: COMBO -->
+            <!-- ============================ -->
+
             <div class="card featured">
+
                 <div class="img-box">
-                    <span class="badge discount">MÁS VENDIDO 🔥</span>
-                    <span style="font-size: 3.5rem;">🥼+🥽</span>
+
+                    <span class="badge discount">
+                        MÁS VENDIDO 🔥
+                    </span>
+
+                    <span style="font-size: 3.5rem;">
+                        🥼 + 🥽
+                    </span>
+
                 </div>
+
+
                 <div>
-                    <div class="cat">Paquete Completo</div>
-                    <div class="name">Combo Laboratorio (Guardapolvo + Lentes)</div>
-                    <div class="price"><span>S/ 60.00</span>S/ 55.00</div>
-                    <a class="btn btn-featured" href="https://wa.me." target="_blank">🔥 Solicitar Combo por WhatsApp</a>
+
+                    <div class="cat">
+                        Paquete Completo
+                    </div>
+
+                    <div class="name">
+                        Combo Laboratorio
+                        (Guardapolvo + Lentes)
+                    </div>
+
+                    <div class="price">
+
+                        <span>
+                            S/ 60.00
+                        </span>
+
+                        S/ 55.00
+
+                    </div>
+
+
+                    <a
+                        class="btn btn-featured"
+                        href="https://wa.me/51912561273?text=Hola%20Ingenious%20Electronics%20%F0%9F%91%8B%2C%20soy%20estudiante%20de%20UTEC%20y%20quiero%20comprar%20el%20Combo%20de%20Laboratorio%20%28Guardapolvo%20%2B%20Lentes%29%20por%20S%2F%2055.00.%20%C2%BFC%C3%B3mo%20puedo%20coordinar%20la%20entrega%3F"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        🔥 Solicitar Combo por WhatsApp
+                    </a>
+
                 </div>
+
             </div>
+
 
         </div>
+
     </main>
 
+
+
+    <!-- ENTREGA -->
     <section class="delivery">
-        <h3>Modalidad de Entrega</h3>
-        <h4>Puntos Estratégicos</h4>
-        <p>Coordinamos entregas directas en Barranco (en la puerta o alrededores del campus UTEC).</p>
+
+        <h3>
+            Modalidad de Entrega
+        </h3>
+
+        <h4>
+            Puntos Estratégicos
+        </h4>
+
+        <p>
+            Coordinamos entregas directas en Barranco
+            (en la puerta o alrededores del campus UTEC).
+        </p>
+
     </section>
 
+
+
+    <!-- FOOTER -->
     <footer>
+
         <div class="foot-bottom">
-            <p>Copyright © 2026 Ingenious Electronics. Todos los derechos reservados.</p>
-            <a href="#" style="text-decoration:none; color:var(--txt); font-weight:600;">📖 Libro de Reclamaciones</a>
+
+            <p>
+                Copyright © 2026 Ingenious Electronics.
+                Todos los derechos reservados.
+            </p>
+
+
+            <a
+                href="#"
+                style="
+                    text-decoration: none;
+                    color: var(--txt);
+                    font-weight: 600;
+                "
+            >
+                📖 Libro de Reclamaciones
+            </a>
+
         </div>
+
     </footer>
+
 
 </body>
 </html>
